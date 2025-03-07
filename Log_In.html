@@ -5,50 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <style>
+        body{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+            background-color: b;
+        }
         .container{
-            height: 97.7vh;
-            width: 98vw;
+            height: 500px;
+            width : 400px;
+            border : 0.5px dotted black;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .form{
             display: flex;
             flex-direction: column;
+            gap: 5px;
+        }
+        .int{
+            width: 250px;
+            height: 30px;
+            border:1px dotted black;
+            border-radius: 3px;
+        }
+        [type = "submit"]{
+            height: 30px;
+            width: 250px;
+            background-color: rgb(23, 136, 198);
+            color: white;
+            font-weight: bolder;
+            border-radius: 20px;
+        }
+        #forget_password{
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .head{
+            height: 200px;
+            width: auto;
+            display: flex;
             justify-content: center;
             align-items: center;
         }
-        .form{
-            height: 250px;
-            width: 250px;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid black;
-            background-color: azure;
+        h1{
+            font-style: italic;
+            font-weight: 100;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-        #forgat_password{
-            text-align: right;
+        .signup{
+            height: 50px;
+            width: 400px;
+            border: 0.5px dotted black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="head">
+            <h1>Messanger</h1>
+        </div>
+        
         <form action="submit"  method="get" target="_blank" class = "form">
-            <label for="email">User Email id</label>
-            <input type="email" name = "email" id = "email" placeholder="Enter email id " required>
-            <label for="password">Password</label>
-            <input type="password" name = "password" id = "password" placeholder="Enter password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}" title = "Password must have at least 8 characters, including 1 uppercase letter, 1 lowercase letter, and 1 number" required
+            <div id = "email">
+                <input type="email" name = "email" id = "email" class = "int" placeholder="Username, email, or number " required>
+            </div>
+            <div id="password">
+                <input type="password" name = "password" id = "password"class = "int"  placeholder="Password"   required
             >
-
-            
-            <button type="submit" onclick="clearFields()">Submit</button>
+            </div>
             <label>
                 <input type="checkbox" name="remember" id = "checkbox"> Remember me
             </label>
+            <button type="submit" onclick="clearFields()">Log in</button>
+
+            
             <div id = "forget_password">
                 <a href="forget.html">Forget Password?</a>
             </div>
             
         </form>
+        
+    </div>
+    <div class="signup">
+        <span>Don't have an account? </span>
         <a href="index.html">
-            <button>Create New Account</button>
+            Sign up
         </a>
     </div>
+    
     <script>
         function clearFields() {
             window.location.href = "success.html";

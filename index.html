@@ -12,6 +12,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 20px;
         }
         .form{
             height: 500px;
@@ -59,10 +60,13 @@
             <button type="submit" onclick="validatePasswords() ">Submit</button>
             
         </form>
-        <span>Already have an account </span>
-        <a href="Log_In.html">
+        <div class="signIn">
+            <span>Already have an account ? </span>
+            <a href="Log_In.html">
             Sign in
         </a>
+        </div>
+        
     </div>
     <script>
         function validatePasswords() {
