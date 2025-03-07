@@ -3,87 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Log In</title>
     <style>
-        .container{
-            height: 97.7vh;
-            width: 98vw;
+        body{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            height: 100vh;
+            flex-direction: column;
             gap: 20px;
+            background-color: b;
+        }
+        .container{
+            height: 500px;
+            width : 400px;
+            border : 0.5px dotted black;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 30px;
+            border-radius: 5px;
         }
         .form{
-            height: 500px;
-            width: 350px;
             display: flex;
             flex-direction: column;
-            border: 1px solid black;
-            background-color: azure;
+            gap: 5px;
         }
-        #forgat_password{
-            text-align: right;
+        .int{
+            width: 250px;
+            height: 30px;
+            border:1px dotted black;
+            border-radius: 3px;
+        }
+        [type = "submit"]{
+            height: 30px;
+            width: 250px;
+            background-color: rgb(23, 136, 198);
+            color: white;
+            font-weight: bolder;
+            border-radius: 20px;
+        }
+        #forget_password{
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .head{
+            height: 200px;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            font-style: italic;
+            font-weight: 100;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .signup{
+            height: 50px;
+            width: 400px;
+            border: 0.5px dotted black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="head">
+            <h1>Messanger</h1>
+        </div>
+        
         <form action="submit"  method="get" target="_blank" class = "form">
-            <label for="FirstName">First Name*</label>
-            <input type="text" name = "FirstName" id = "FirstName" placeholder="Enter first Name " required>
-            <label for="LastName">Last Name*</label>
-            <input type="text" name = "LastName" id = "LastName" placeholder="Enter last Name " required>
-            <label for="email">Email id*</label>
-            <input type="email" name = "email" id = "email" placeholder="Enter email id " required>
-            <label for="BirthDate">Birth Date*</label>
-            <input type="date" name = "BirthDate" id = "BirthDate" min="30-12-2010" required>
-            <label for="phone">Phone Number </label>
-            <input type="tel" id="phone" name="phone" pattern="^\d{10}$" required placeholder="1234567890">
-            <label for="gender">Select Gender</label>
-            <select id="gender" name="gender" required>
-                <option value="" disabled selected>Select your gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="extra">Extra</option>
-            </select>
-            <label for="password">Password*</label>
-            <input type="password" name = "password" id = "password" placeholder="Enter password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}" title = "Password must have at least 8 characters, including 1 uppercase letter, 1 lowercase letter, and 1 number" required
+            <div id = "email">
+                <input type="email" name = "email" id = "email" class = "int" placeholder="Username, email, or number " required>
+            </div>
+            <div id="password">
+                <input type="password" name = "password" id = "password"class = "int"  placeholder="Password"   required
             >
-            <label for="rep_password">Repeat Password*</label>
-            <input type="password" name = "rep_password" id = "rep_password" placeholder="Enter same password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}" title = "Password must have at least 8 characters, including 1 uppercase letter, 1 lowercase letter, and 1 number" required
-            >
+            </div>
             <label>
                 <input type="checkbox" name="remember" id = "checkbox"> Remember me
             </label>
+            <button type="submit" onclick="clearFields()">Log in</button>
+
             
-            <button type="submit" onclick="validatePasswords() ">Submit</button>
+            <div id = "forget_password">
+                <a href="forget.html">Forget Password?</a>
+            </div>
             
         </form>
-        <div class="signIn">
-            <span>Already have an account ? </span>
-            <a href="Log_In.html">
-            Sign in
-        </a>
-        </div>
         
     </div>
+    <div class="signup">
+        <span>Don't have an account? </span>
+        <a href="signup.html">
+            Sign up
+        </a>
+    </div>
+    
     <script>
-        function validatePasswords() {
-
-            var password = document.getElementById("password").value;
-            var confirmPassword = document.getElementById("rep_password").value;
-
-            if (password !== confirmPassword) {
-                alert("Passwords do not match!");
-                return false; // Prevent form submission
-            }
+        function clearFields() {
+            window.location.href = "success.html";
             document.getElementById("email").value = "";
             document.getElementById("password").value = "";
             document.getElementById("checkbox").value = "";
-            window.location.href = "success.html";
-            return true; // Allow form submission
-
+            
         }
     </script>
 </body>
