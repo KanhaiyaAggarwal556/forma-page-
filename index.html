@@ -12,6 +12,7 @@
             flex-direction: column;
             gap: 20px;
             background-color: b;
+            overflow: hidden;
         }
         .container{
             height: 500px;
@@ -30,17 +31,20 @@
         }
         .int{
             width: 250px;
-            height: 30px;
+            height: 25px;
             border:1px dotted black;
             border-radius: 3px;
+            padding: 5px;
         }
         [type = "submit"]{
             height: 30px;
             width: 250px;
             background-color: rgb(23, 136, 198);
             color: white;
-            font-weight: bolder;
+            font-weight: bold;
             border-radius: 20px;
+            font-size: 0.8rem;
+            border: 0.9px transparent;
         }
         #forget_password{
             height: 100px;
@@ -54,6 +58,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
         h1{
             font-style: italic;
@@ -69,12 +74,18 @@
             justify-content: center;
             border-radius: 5px;
         }
+        img{
+            height: 70px;
+            width: 150px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="head">
             <h1>Messanger</h1>
+            <img src="https://play-lh.googleusercontent.com/JfQNUnohpuq5IP65WN9C109VjLjDEj2tZYlPtComLznQfGeeoesubOaHGBcpZdXKuHU=w600-h300-pc0xffffff-pd" alt="">
+
         </div>
         
         <form action="submit"  method="get" target="_blank" class = "form">
